@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.Properties;
 
 @RefreshScope
 @RestController
@@ -68,6 +71,20 @@ public class NacosConfigSampleApplication {
                 @Override
                 public void receiveConfigInfo(String s) {
                     System.out.println("[listener] " + s);
+                    System.out.println("[Before User] " + user);
+
+                    Properties properties = new Properties();
+                    try {
+                        properties.load(new StringReader(s));
+                        String name = properties.getProperty("user.name");
+                        int age = Integer.parseInt(properties.getProperty("user.age"));
+                        user.setName(name);
+                        user.setAge(age);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+
+                    System.out.println("[After User] " + user);
                 }
             });
         };
