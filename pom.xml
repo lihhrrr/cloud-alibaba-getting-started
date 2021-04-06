@@ -7,9 +7,11 @@
     <groupId>com.alibaba.cloud</groupId>
     <artifactId>cloud-sample</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <modules>
         <module>nacos-config-sample</module>
+        <module>nacos-discovery-provider-sample</module>
     </modules>
 
     <properties>
