@@ -12,6 +12,7 @@
     <modules>
         <module>nacos-config-sample</module>
         <module>nacos-discovery-provider-sample</module>
+        <module>nacos-discovery-consumer-sample</module>
     </modules>
 
     <properties>

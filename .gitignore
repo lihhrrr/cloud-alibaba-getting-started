@@ -22,3 +22,5 @@ nacos-config-sample/nacos-config-sample.iml
 .idea/uiDesigner.xml
 nacos-config-sample/src/test/
 */iml
+**/*.iml
+**/*.xml
